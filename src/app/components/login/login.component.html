@@ -1,0 +1,53 @@
+<p>login works!</p>
+<div class="body">
+    <span class="form-align"> <div class="form_content"  >
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="form-flex" >
+                <div class="Title">
+                    <h1 style="color: #3566b8;">F</h1>
+                    <h1 style="color: #34a853; margin-left: 0;">u</h1>
+                    <h1 style="color: #fabb05; margin-left: 0;">n</h1>
+                    <h1 style="color: #ea4335; margin-left: 0;">d</h1>
+                    <h1 style="color: #3566b8; margin-left: 0;">o</h1>
+                    <h1 style="color: #fabb05; margin-left: 0;">o</h1>
+                    <h1 style="color: #34a853; margin-left: 0;">N</h1>
+                    <h1 style="color: #ea4335; margin-left: 0;">o</h1>
+                    <h1 style="color: #34a853; margin-left: 0;">t</h1>
+                    <h1 style="color: #fabb05; margin-left: 0;">e</h1>
+                    <h1 style="color: #3566b8; margin-left: 0;">s</h1>
+                </div>
+                <div>
+                    <h3 class="heading" >Sign In</h3>
+                    <h3 class="sub-heading">Use your Fundoo Account</h3>
+                </div>
+                <div class="Form" >
+                    <div class="flex-1">
+                        <mat-form-field appearance="outline" class="Email">
+                            <mat-label>Email or Phone</mat-label>
+                            <input matInput placeholder="email" formControlName="email" value="email" >
+                            <mat-error *ngIf="registerForm.controls.email.errors">email is required !</mat-error>
+                        </mat-form-field>
+                    
+                        <mat-form-field appearance="outline" class="Email">
+                            <mat-label>Password</mat-label>
+                            <input type="password" matInput placeholder="Password" formControlName="password" value="password" >
+                            <mat-error *ngIf="registerForm.controls.password.errors">Password is required !</mat-error>
+                        </mat-form-field>
+                    </div>
+                    <p style="margin-top: 0px;"><a class="anchor" href="#"routerLink="/forget-password">Forget email or Password ?</a></p>
+                    <div class="text-div">
+                        <h6 class="text_line" style="display: inline;">Not your computer? Use guest mode to sign in privately</h6>
+                    </div>
+                    <p style="margin-top: 5px;"><a class="anchor" href="#">Learn More</a></p>
+                    <br><br><br>
+                    <div> 
+                        <div class="button_hover">
+                            <button mat-button style="padding-left: 0px; font-size: 15px;" routerLink="/registration">Create Account</button>
+                        </div>
+                        <div class="button">
+                            <button type="submit" mat-raised-button color="primary" style="background: #1a73e8; width: 70px;">Submit</button>
+                        </div> 
+                    </div>
+                </div>
+            </form>
+        </div>  </span>
+</div>
