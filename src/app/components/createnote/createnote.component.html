@@ -1,0 +1,30 @@
+<div  class="head-center">
+    <mat-accordion class="example-headers-align" multi >
+        <mat-expansion-panel class="panel"  hideToggle>
+          <mat-expansion-panel-header class="header">
+            <mat-panel-title>
+              Title
+            </mat-panel-title>
+            <mat-panel-description>
+                <span class="material-icons" style="padding-left: 2rem;color:grey;">
+                    check_box
+                </span>
+                <span class="material-icons" style="padding-left: 2rem;color:grey;">
+                     image
+                </span>      
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <form [formGroup]="form" class="example-form" style="border-bottom: 0px;" (ngSubmit)="submit()" id="my-form">
+            <mat-form-field class="example-full-width" appearance="fill" style="width: 100%;">
+              <!--<mat-label></mat-label>-->
+              <input matInput placeholder="Take a note.." formControlName="notestext" >
+            </mat-form-field>
+          <!--Icon element-->
+          <mat-action-row class="footer" style="display: flex; justify-content: space-between;" >
+            <app-icons style="width: 60%;"></app-icons>
+            <button mat-button type="submit" form="form" (click)="nextStep()">Close</button>
+        </mat-action-row>
+          </form>
+        </mat-expansion-panel>
+    </mat-accordion>
+</div>
