@@ -1,0 +1,129 @@
+<body class="body">
+    <div style="height: 100vh;width:100%;">
+        <div style="border-bottom: 1px solid #bfbebe; ">
+            <div class="header search-box"  >
+                <mat-toolbar> 
+                        <button  class=" buttonMenu button" type="button" mat-raised-button (click)="drawer.toggle()"  mat-icon-button aria-label="Example icon button with a menu icon">                   
+                            <mat-icon>menu</mat-icon>
+                        </button>
+                        <span style="margin-left:30px;margin-top:10px;margin-left: 2px;"><img src="../assets/kepp_logo.png" style="height: 50px;width:50px;"></span>
+                        <span class="title">FundooNotes</span>
+                        <span class="example-spacer"></span>
+                        <div class="head-center" >
+                            <form class="search" >
+                                <button mat-icon-button class="example-icon settings-icon" mat-icon-button [matMenuTriggerFor]="menu1" aria-label="Example icon-button with a menu" >
+                                    <mat-icon style="margin:0px;">search</mat-icon>
+                                </button>
+                                <mat-menu #menu1="matMenu" class="search-toggle"  yPosition="below" style="padding:0px;">
+                                        <span><span class="material-icons">
+                                            keyboard_backspace
+                                        </span><input mat-menu-item class="searchInput search-toggle-item" aria-label="Search" type="text" placeholder="Search"></span>
+                                </mat-menu> 
+                                <div class="searchbox">
+                                    <input class="searchInput" aria-label="Search" type="text" placeholder="Search" >
+                                </div>
+                            </form>
+                        </div>
+                        <div class="utility">
+                            <button mat-icon-button class="example-icon refresh" aria-label="Example icon-button with refresh icon">
+                                <mat-icon>refresh</mat-icon>
+                            </button>
+                            <button mat-icon-button class="example-icon menu-icon" aria-label="Example icon-button with menu icon">
+                                <mat-icon>menu</mat-icon>
+                            </button>
+                            <button mat-icon-button class="example-icon settings-icon" mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu" >
+                                <mat-icon>settings</mat-icon>
+                            </button>
+                            <mat-menu #menu="matMenu" class="setting"  yPosition="below">
+                                    <button mat-menu-item class="sentting-item">
+                                        <span>Settings</span>
+                                    </button>
+                                    <button mat-menu-item class="sentting-item">
+                                        <span>Enable dark theme</span>
+                                    </button>
+                                    <button mat-menu-item class="sentting-item">
+                                        <span>send feedback</span>
+                                    </button>
+                                    <button mat-menu-item class="sentting-item">
+                                        <span>Help</span>
+                                    </button>
+                                    <button mat-menu-item class="sentting-item">
+                                        <span>App downloads</span>
+                                    </button>
+                                    <button mat-menu-item class="sentting-item">
+                                        <span>Keyboard shortcuts</span>
+                                    </button>
+        
+                            </mat-menu>
+                        </div>
+                        <div class="user">
+                            <button mat-icon-button class="example-icon" aria-label="Example icon-button with list icon">
+                                <mat-icon>grid_on</mat-icon>
+                            </button>
+                            <button  mat-icon-button class="example-icon settings-icon" mat-icon-button [matMenuTriggerFor]="menuuser" aria-label="Example icon-button with a menu" >                     
+                                <mat-icon>supervised_user_circle</mat-icon>
+                            </button>
+                            <mat-menu #menuuser="matMenu" class="setting1"  yPosition="below">
+                                <button mat-menu-item class="sentting-item">
+                                <span>Log out</span>
+                                </button>
+                            </mat-menu>
+                        </div>
+                </mat-toolbar>
+            </div>
+       
+           
+<!--side nav-->
+    
+    <mat-drawer-container class="example-container">
+        <mat-drawer #drawer class="example-sidenav" mode="side" >
+            <a ><div class="sideIcon" style="margin-bottom: 20px;height: 48px;">
+                <button>
+                    <span class="material-icons side-icon" >
+                        lightbulb
+                        </span>
+                </button>
+                <button class="side-menu-item" (click)="noteDisplay()" >Notes</button>
+            </div></a>
+
+            <div class="sideIcon" style="margin-bottom: 20px;height: 48px;" >
+                <button>
+                  <mat-icon class="side-icon"> notifications_none</mat-icon>
+                </button>
+                <button class="side-menu-item">Remainders</button>
+            </div>
+
+            <div class="sideIcon" style="margin-bottom: 20px;height: 48px;">
+                <button>
+                    <mat-icon class="side-icon">create</mat-icon>
+                </button>
+                <button class="side-menu-item" (click)="openDialog()">Edit Labels</button>
+            </div>
+
+            <div class="sideIcon" style="margin-bottom: 20px;height: 48px;">
+                <button>
+                    <mat-icon class="side-icon">archive</mat-icon>
+                </button>
+                <button class="side-menu-item">Archieve</button>
+            </div>
+            
+            <div class="sideIcon" style="margin-bottom: 20px;height: 48px;">
+                <button>
+                    <mat-icon class="side-icon">delete_outline</mat-icon>
+                </button>
+                <button class="side-menu-item">Trash</button>
+            </div>
+            
+        </mat-drawer> 
+        <!--<div style=" width: 100%; height:100vh;display: flex;justify-content: center;">
+            <app-notes></app-notes>
+        </div>-->
+        <div style="width: 100%; height:100vh;display: flex;justify-content: center;" [ngSwitch]="switchClick">
+            <app-notes *ngSwitchCase = "1" style="height: 30%;"></app-notes>
+        </div>
+        
+    </mat-drawer-container>
+    </div> 
+    </div>
+</body> 
+                   
