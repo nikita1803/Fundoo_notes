@@ -10,10 +10,13 @@
     </button>
 
     <!-- color pallate icon -->
-    <button mat-icon-button>
+    <button mat-icon-button [matMenuTriggerFor]="aboveMenu"> 
             <mat-icon>color_lens</mat-icon>
     </button>
-    
+    <!--color drop down-->
+    <mat-menu  #aboveMenu="matMenu" yPosition="above">    
+        <app-colors (ItemEvent)="receiveColorCode($event)"></app-colors>
+    </mat-menu>
     <!-- insert photo icon -->
     <button mat-icon-button>
         <mat-icon> insert_photo</mat-icon>
