@@ -1,0 +1,41 @@
+.body {
+    background-color: #ffff;
+    height: 107px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+div.circle {
+    border-radius: 50px/50px;
+    width: 0px;
+    height: 0px;
+    cursor: pointer;
+}
+span {
+    margin-left: 33px;
+}
+  
+.first-row {
+    display: flex;
+}
+  
+.color {
+    //height: 30px;
+    width: 10px;
+    border-radius: 250px;
+}
+  
+.color-icon {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    height: 14vh;
+}
+
+.menuRow{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    //width:40px;
+}
