@@ -24,5 +24,4 @@ export class NoteserviceService {
   note = (token: any) => {
     return this.httpService.get(`${this.url}notes/getNotesList`, true, token)
   }
- 
 }

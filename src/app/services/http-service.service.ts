@@ -5,6 +5,7 @@ import { environment } from 'src/environments/environment';
 @Injectable({
   providedIn: 'root'
 })
+
 export class HttpServiceService {
   token : any;
   BaseUrl = environment.baseUrl;
@@ -16,10 +17,25 @@ export class HttpServiceService {
     return this.httpClient.post(url, data, isHeaderRequired && tokenOption)
   }
   
-get(url: string, isHeaderRequired: any = false, token: any = null) {  
-  console.log("data Get");
-  let tokenOption = {headers: new HttpHeaders({"Authorization": token})};
-  return this.httpClient.get(url, isHeaderRequired && tokenOption)
-}
-
+  get(url: string, isHeaderRequired: any = false, token: any = null) {  
+    console.log("data Get");
+    let tokenOption = {headers: new HttpHeaders({"Authorization": token})};
+    return this.httpClient.get(url, isHeaderRequired && tokenOption)
+  }
+  UpdateNote(id: any) {
+    console.log(id);
+    const data = {
+      noteId:id.noteId,
+      title: id.title,
+      description: id.description
+    }
+    this.token = localStorage.getItem('Token');
+    let options = {
+      headers: new HttpHeaders({
+        'Authorization': this.token,
+        'Content-Type': 'application/json'
+      })
+    }
+    return this.httpClient.post(this.BaseUrl + '/notes/updateNotes', data, options);
+  }
 }
