@@ -35,6 +35,7 @@ import { Router } from '@angular/router';
       "password": this.registerForm.controls.password.value
       //"confirmPasswor" : this.registerForm.controls.confirmPassword.value
     }
+    console.log(data)
     this.service.registration(data).subscribe((data) => {
       console.log(data)
     })

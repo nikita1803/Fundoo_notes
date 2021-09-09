@@ -28,7 +28,10 @@ import { NotesComponent } from './components/notes/notes.component';
 import { EditComponent } from './components/edit/edit.component';
 import { DialogueElementComponent } from './components/dialogue-element/dialogue-element.component';
 import { IconsComponent } from './components/icons/icons.component';
+import { ColorsComponent } from './components/colors/colors.component';
+import { DisplaynoteComponent } from './components/displaynote/displaynote.component';
 
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -43,7 +46,10 @@ import { IconsComponent } from './components/icons/icons.component';
     NotesComponent,
     EditComponent,
     DialogueElementComponent,
-    IconsComponent
+    IconsComponent,
+    ColorsComponent,
+    DisplaynoteComponent,
+    
     
   ],
   imports: [
@@ -63,7 +69,8 @@ import { IconsComponent } from './components/icons/icons.component';
     MatToolbarModule,
     MatExpansionModule,
     MatListModule,
-    MatDialogModule
+    MatDialogModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
