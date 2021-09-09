@@ -1,0 +1,22 @@
+<p>displaynote works!</p>
+<div class="note-container" *ngFor="let note of allNotes;">
+    <mat-card class="card" >
+        <div class="mainBlock">
+            <div id="title" #title contenteditable="false" aria-multiline="true" role="textbox" class="font n1"
+                dir="ltr">
+                <h2 style="margin: 0px;">{{ note.title }}</h2>
+            </div>
+            <div id="description" #description contenteditable="false" aria-multiline="true" role="textbox"
+                class="font n1" dir="ltr">
+                <h3>{{ note.description }}</h3>
+            </div>
+            <!-- [hidden]="!iconVisible" -->
+            <div class="icon">
+                <span class="material-icons pin" >
+                    push_pin
+                    </span>
+                <app-icons></app-icons>
+            </div>
+        </div>
+    </mat-card>
+</div>
