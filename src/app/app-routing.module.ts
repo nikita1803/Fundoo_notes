@@ -10,14 +10,14 @@ import { RegistrationComponent } from './components/registration/registration.co
 import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
 
 const routes: Routes = [
-  {path: 'registration', component: RegistrationComponent},
+  { path: 'registration', component: RegistrationComponent},
   { path: 'login', component: LoginComponent},
   { path: 'forget-password', component: ForgetPasswordComponent },
   { path: 'resetpassword/:token', component: ResetPasswordComponent },
-  {path: 'dashboard', component: DashboardComponent},
-  {path: 'header', component: HeaderComponent},
+  { path: 'dashboard', component: DashboardComponent},
+  { path: 'header', component: HeaderComponent},
   { path: 'createnotes', component: CreatenoteComponent },
-  {path : 'notes', component: NotesComponent}
+  { path : 'notes', component: NotesComponent}
 ];
 
 @NgModule({
