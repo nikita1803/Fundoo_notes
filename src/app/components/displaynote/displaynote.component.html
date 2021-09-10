@@ -1,22 +1,25 @@
-<p>displaynote works!</p>
-<div class="note-container" *ngFor="let note of allNotes;">
-    <mat-card class="card" >
-        <div class="mainBlock">
-            <div id="title" #title contenteditable="false" aria-multiline="true" role="textbox" class="font n1"
-                dir="ltr">
-                <h2 style="margin: 0px;">{{ note.title }}</h2>
-            </div>
-            <div id="description" #description contenteditable="false" aria-multiline="true" role="textbox"
-                class="font n1" dir="ltr">
-                <h3>{{ note.description }}</h3>
-            </div>
-            <!-- [hidden]="!iconVisible" -->
-            <div class="icon">
-                <span class="material-icons pin" >
-                    push_pin
+<!--<p>displaynote works!</p>-->
+<div class="note-container">
+    <div *ngFor="let note of allNotes;" >
+        <mat-card class="card" >
+            <div class="mainBlock" >
+                <div id="title" #title contenteditable="false" aria-multiline="true" role="textbox" class="font n1"
+                    dir="ltr" (click)="openAddDialog(note)">
+                    <h2 style="margin: 0px;">{{ note.title }}</h2>
+                    <!--<h2 style="margin: 0px;">{{ note.isDeleted }}</h2>-->
+                    <span class="material-icons pin" >
+                        push_pin
                     </span>
-                <app-icons></app-icons>
+                </div>
+                <div id="description" #description contenteditable="false" aria-multiline="true" role="textbox"
+                    class="font n1" dir="ltr">
+                    <h3>{{ note.description }}</h3>
+                </div>
+                <!-- [hidden]="!iconVisible" -->
+                <div class = "icon">
+                    <app-icons  [noteId]="note.id"></app-icons>
+                </div>
             </div>
-        </div>
-    </mat-card>
+        </mat-card>
+    </div>
 </div>
