@@ -43,17 +43,18 @@
     //flex-wrap: wrap;
     width: 30%; 
     background-color: rgb(255, 255, 255); 
+    //margin-left: -40px;
     //padding: 12px 0px 12px 10px;
 }
 
 .buttonMenu{
-    //display: flex;
-    //flex-wrap: wrap;
+    display: flex;
+    flex-wrap: wrap;
     margin-top: -7px; 
     background-color: rgb(255, 255, 255);
     color: black;
-    //justify-content: center;
-    margin-left: 0px;
+    justify-content: center;
+    //margin-left: -20px;
 
 }
 .image{
@@ -99,8 +100,7 @@
     border: 1px solid transparent;
     margin-left: 50px;
    // background-color:red ;
-    
-   
+  
 }
 .head-center:hover {
     background: white;
@@ -368,7 +368,7 @@ button {
     
     
 
-//}
+
 //nav bar css
 
 .side-menu-item{

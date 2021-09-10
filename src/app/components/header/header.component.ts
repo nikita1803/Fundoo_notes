@@ -25,6 +25,9 @@ export class HeaderComponent implements OnInit {
   openDialog(){
     this.dialog.open(DialogueElementComponent);
   }
+  trashDisplay(){
+    return this.switchClick = 3;
+  }
   
 }
 

@@ -34,7 +34,7 @@
                             <button mat-icon-button class="example-icon settings-icon" mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu" >
                                 <mat-icon>settings</mat-icon>
                             </button>
-                            <mat-menu #menu="matMenu" class="setting"  yPosition="below">
+                            <mat-menu #menu="matMenu" class="setting"  yPosition="below" >
                                     <button mat-menu-item class="sentting-item">
                                         <span>Settings</span>
                                     </button>
@@ -111,7 +111,7 @@
                 <button>
                     <mat-icon class="side-icon">delete_outline</mat-icon>
                 </button>
-                <button class="side-menu-item">Trash</button>
+                <button class="side-menu-item" (click)="trashDisplay()">Trash</button>
             </div>
             
         </mat-drawer> 
@@ -120,6 +120,7 @@
         </div>-->
         <div style="width: 100%; height:100vh;display: flex;justify-content: center;" [ngSwitch]="switchClick">
             <app-notes *ngSwitchCase = "1" style="height: 30%;"></app-notes>
+            <app-trash *ngSwitchCase = "3" style="height: 30%;"></app-trash>
         </div>
         
     </mat-drawer-container>
