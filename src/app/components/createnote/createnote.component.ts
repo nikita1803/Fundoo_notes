@@ -32,10 +32,10 @@ export class CreatenoteComponent implements OnInit {
       this.form.reset(); 
       
     });
-    alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.form.value))
+    //alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.form.value))
     
   }
-  else(alert("please Enter some notes"))
+  //else(alert("please Enter some notes"))
 }
 
  
