@@ -1,0 +1,15 @@
+<!--<p>update works!</p>-->
+<form class="formCSS" [formGroup]="form"(ngSubmit)="submit()">
+    <div class="description"  >
+        <mat-dialog-content class="dialogContent">
+            <input class="inputBox" matInput formControlName="title" >
+        </mat-dialog-content>
+        <mat-dialog-content class="dialogContent">
+            <input class="inputBox" formControlName="description" >
+        </mat-dialog-content>
+        <mat-dialog-actions class="iconButton">
+            <app-icons ></app-icons>
+            <button mat-button type="submit" mat-dialog-close  >close </button>
+        </mat-dialog-actions>
+    </div>
+</form>
