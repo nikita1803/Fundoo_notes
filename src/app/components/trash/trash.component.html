@@ -1,0 +1,16 @@
+<p>trash works!</p>
+<div class="displayBox" >
+    <ng-container  *ngFor="let note of notes">
+        <div  class="noteBlock" >
+            <div>
+                <div class="title">
+                    <h2 style="margin: 0px;">{{ note.title }}</h2>
+                </div>
+                <div class="description" >
+                    <h3>{{ note.description }}</h3>
+                </div>  
+            </div> 
+             <app-icons  class="icon"  [noteId]="note.id"></app-icons>    
+        </div>
+    </ng-container>
+</div>
