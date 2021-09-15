@@ -12,14 +12,14 @@ export class DisplaynoteComponent implements OnInit {
   @Input() allNotes: any = [];
   noteGen: any = [];
   updateData: any;
+  colorData:string=''
   tokenId = localStorage.getItem("token");
   
   constructor(public note: NoteserviceService, private dialog: MatDialog) { }
 
   ngOnInit(): void {
     
-    
-    this.note.note( this.tokenId).subscribe((userData:any) => {
+    this.note.note(this.tokenId).subscribe((userData:any) => {
 
       this.allNotes=userData['data'].data
       this.allNotes=userData['data'].data.reverse()
@@ -28,10 +28,12 @@ export class DisplaynoteComponent implements OnInit {
       });
     })
   }
+  receiveToUpdate=($colorData:string) => {
+    this.colorData = $colorData;
+    console.log("display " + this.colorData) 
+  }
   openAddDialog(updateData: any) {
    this.updateData = updateData
     this.dialog.open(UpdateComponent, {data : {note: updateData} });
   }
-
-  
 }
