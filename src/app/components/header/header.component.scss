@@ -1,76 +1,55 @@
-.body {
+.body{
     display: flex;
     flex-wrap: wrap;
     height: 100%;
     width: 100%;
 }
-.container{
-    background-color: rgb(221, 220, 230);
-    height: 100%;
-}
-
-.header {
-    display: flex;
-    flex-wrap:wrap ;
-    align-items: center;
-    //padding: 8px; 
-    height: 65px; 
+.main{
+    //display: flex;
+    flex-wrap: wrap;
+    //border-bottom: 1px solid #bfbebe; 
     width: 100%;
-    //box-sizing: border-box;
-   // border-bottom: rgb(233, 13, 13);
-    //background-color: rgb(126, 51, 51);
-    margin-top:0px;  
-    margin-bottom: 0px;
-}
-
-.mat-toolbar {
-    background: white;
-    color: rgba(194, 190, 190, 0.87);
-    border-bottom: 1px solid rgb(218, 216, 216);
-    margin-bottom:12px;
-    //background-color: blanchedalmond;
+    height: 70px;
     
 }
-.head-left {
-    display: flex;
-    //flex-wrap: wrap;
-    background-color: rgb(255, 255, 255, 1); 
-    height: 6vh;
-    width: 320px; 
+.mat-toolbar {
+    background:white;
+    height: 67px;
+    color: rgba(194, 190, 190, 0.87);
+    border-bottom: 1px solid rgb(218, 216, 216);
+    width: auto;
+    //margin-bottom:12px; 
+    position: -webkit-sticky;
+    position: sticky; 
 }
-.menu{
-    //display: flex;
-    //flex-wrap: wrap;
-    width: 30%; 
-    background-color: rgb(255, 255, 255); 
-    //margin-left: -40px;
-    //padding: 12px 0px 12px 10px;
-}
-
 .buttonMenu{
     display: flex;
     flex-wrap: wrap;
-    margin-top: -7px; 
+    //margin-top: -7px; 
     background-color: rgb(255, 255, 255);
     color: black;
     justify-content: center;
-    //margin-left: -20px;
-
+}
+::ng-deep .mat-raised-button:not([class*="mat-elevation-z"]) {
+    box-shadow: none;  
+}
+.mat-raised-button:not([class*="mat-elevation-z"]) :hover{
+    border-radius: 50px;
+    height: 40px;
+    width:40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(238, 238, 238);
+    box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2),0px 2px 2px 0px rgba(0, 0, 0, 0.14),0px 1px 5px 0px rgba(0, 0, 0, 0.12);
 }
 .image{
-    margin-left:30px;margin-top:10px;margin-left: 2px;
-}
-::ng-deep .mat-drawer-container {
-    color: rgba(0,0,0,.87);
-    height: 35rem;
-}
-
-.active .buttonMenu:hover{
-    background-color:rgb(56, 55, 55);
-    box-shadow: 10px;
+    margin-left:30px;
+    margin-top:10px;
+    margin-left: 2px;
 }
 .title{
-    //width: 20%; 
+    width: 20%; 
     background-color: rgb(255, 255, 255); 
     padding: 15px 0px 12px 0px; 
     font-size: x-large; 
@@ -85,360 +64,251 @@
     vertical-align: middle;
     margin-left: 4px;
     width:140px;
-    //background-color: yellow;
 }
-
-.head-center {
-    display: flex;
-    border-radius: 8px;
-    background: #f1f3f4;
-    width: 55%;
-    height: 46px;
-    align-items: center;
-    margin-right: 70px;
-    box-sizing: border-box;
-    border: 1px solid transparent;
-    margin-left: 50px;
-   // background-color:red ;
-  
-}
-.head-center:hover {
-    background: white;
-    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
-    //box-shadow: 0 1px 1px o rgba(65,69,73,0.3),0 1px 3px 1px rgba(65,69,73,0.15)
-  }
-.head-right {
-    background-color: rgb(255, 255, 255, 1); 
-    width: 25%;
-    height: 6vh;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-}
-  
-.example-sidenav-content {
-    display: flex;
-    height: 100%;
-    align-items: center;
-    justify-content: center;
-}
- 
-button {
-    cursor: pointer;
-    background: transparent;
-    outline: none;
-    border: none;
-}
-  
-.imgDimension {
-    width: 34px;
-    max-height: 34px;
-}
-
-.material-icons{
-    padding: 0px;
-}
-
-.search {
+.search{
     display: flex;
     flex-wrap: wrap;
-    max-width: 350px;
+    width: 870px;
+    height: 50px;
     flex-direction: row;
     align-items: center;
-    padding: 0px 0px 0px 20px;
-    
-    //background-color: yellowgreen;
-    
+    padding: 0px 0px 0px 20px; 
+    margin-left: 80px;
+    background-color: #f1f3f4;
+    border-radius: 10px;
 }
-
-.searchInput {
-    //width: 280%;
-    height: 8%; 
+.search:hover {
+    background: white;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+  }  
+  .icon{
+      display: none;
+  }
+.example-icon{
+    display: flex;
+    flex-wrap: wrap;
+    height: 30px;
+    width: 30px;
+    color:grey;
+    margin-top: -5px;
+}
+.searchInput{
+    display: flex;
+    flex-wrap: wrap;
+    width: auto;
+    height: 58%; 
     outline: none;
-    //border: transparent;
-    //background-color:white;
     padding: 0px 0px 0px 10px;
     background: transparent;
     border: none;
     font: normal 16px Google Sans,Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
     font-variant-ligatures: normal;
     font-variant-ligatures: none;
-    //height: 46px;
-    //outline: none;
-    width: 100%;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-}
-
-.user-box{
-    width: 200px !important;
-    height: 158px;
-    display: flex;
-}
-
-::ng-deep .mat-menu-panel {
-    min-width: 40px !important;
-    min-height: 400px !important;
-}
-
-.noteDiv {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-    padding-top: 40px;
+    margin-top: 6px;
 }
 .utility{
+    display: flex;
+    flex-wrap: nowrap;
     align-items: center;
-    float:left;
-    margin-right:30px;
-    //display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    
+    height: 40px;
+    margin-left:40px;
+    flex-direction: row;  
 }
-
-.example-icon{
-    height: 30px;
-    width: 30px;
-    //margin:7px;
-    color:grey;
-    //display: flex;
-    //flex-wrap: wrap;
-    //flex-direction: row;
-    //justify-content: flex-end;
+.utility-item{
+    margin-left: 10px;
 }
-::ng-deep .setting{
+::ng-deep .matmenu{
     min-width: 40px !important;
-    min-height: 40px !important;
+    min-height: 140px !important;
     margin-top: 12px;
     border-radius: 5px;
-    
 }
-::ng-deep .sentting-item{
-    max-height:35px;
-    
+::ng-deep .setting-item{
+    max-height:35px;   
 }
-::ng-deep .setting1{
-    min-width: 150px !important;
-    min-height: 60px !important;
-    margin-top: 12px;
-    border-radius: 5px;   
-}
-
-
-@media (max-width:924px){
-    .searchbox{
-        display: none;
-        //background-color:red ;
-    }
-    .head-center:hover {
-        box-shadow: none;
-      }
-   .head-center{
-       background-color: white;
-        width:800px;
-        margin-right: -80px;
-        display: flex;
-        justify-content: flex-end;
-        flex-wrap: wrap;
-        margin-bottom: 0px;
-        margin-left: -50px;
-      
-   }
-   .header {
-     
-    height: 100px; 
-   
-}
-   .searchInput{
-    width: 440px;
+.user{
+    display: flex;
+    flex-wrap: nowrap;
     height: 40px;
-    float:right;
-    margin-top:-5px;
-   }
-    
-    .header {
+    align-items: center;
+    margin-left: 45px;
+}
+.user-item{
+    max-height:35px; 
+}
+::ng-deep .mat-menu-panel {
+    //min-width: none;
+    max-width: 530px !important ;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    max-height: calc(100vh - 48px);
+    border-radius: 4px;
+    outline: 0;
+    min-height: 6px !important;
+}
+@media (max-width:886px){
+    .search-icon{
         display: flex;
-        flex-wrap:nowrap ;
-        align-items: center;
-        padding: 8px; 
-        height: 49.5px; 
-        width: 100%;
-        box-sizing: border-box;
-        //background-color: rgb(126, 51, 51);
-        margin-top:15px;
-        margin-right: auto;  
-
-    }
-    .mat-toolbar{
-        display:flex;
-        flex-wrap: nowrap;
-        border-style: none;
-        border-bottom: 1px solid rgb(218, 216, 216);
-        margin-bottom:12px;
-       // justify-content: flex-end;
-    }
-    
-    .example-icon{
-        display: flex;
-        height: 30px;
-        width: 30px;
-        margin:7px;
-        color:grey;
         flex-wrap: wrap;
-        justify-content: flex-end;
+        margin-left: 200px;
     }
-    .user{
+
+    .search{
+        background-color: white;
+        margin-left: 10px;;
+    }
+    .search:hover{
+        background: white;
+        box-shadow: none;
+    }
+    .searchInput{
+        display: none;
+    }
+    .icon{
         display: flex;
-        flex-wrap: nowrap;
-       flex-direction: row;
-       //margin-right: 32%;
-        flex-shrink: 4;
-        justify-content: stretch;
-        
+        margin-left:150px;
+        margin-top: 8px;
+        color: grey;
+    }
+    .back-icon{
+        display:inline;
+        float:left;
+        margin-top: 10px;
     }
     .utility{
-        display: flex;
-        flex-wrap: nowrap;
-       flex-direction: row;
-        margin-left: 10%;
-        flex-shrink: 1;
-       //background-color: blanchedalmond;
-        white-space: nowrap;
-        justify-content: stretch;
-        width: 200px;
-        justify-content: flex-end;
-        //display: flex;
+        align-items: center;
+        height: 10px;
+        margin-left:15px;
     }
-    
-    ::ng-deep .mat-menu-panel{
-            min-width: 500px !important;
-            min-height: 50px !important;
-            padding:0px;
-            overflow: auto;
-
-        }
-    
-    ::ng-deep .search-toggle{
-        width: 200px !important;
-        height: 0px !important;
-        margin-top: -40px;
-        margin-right: -10px;
-        border-radius: 5px;
-        padding-top: 0px;
-        padding-bottom: 0px;
-        display: flex;
-  
+    .user{
+        align-items: center;
+        height: 40px;
+        margin-left:15px;
     }
-   ::ng-deep .search-toggle-item{
-       height:5px;
-       padding: 0px;
-       padding-top: 0px;
-       padding-bottom: 0px;
-       margin-left: 5px;
+    .search-toggle-item{
+        width:440px;
+        display:inline;
         
     }
-    
+    ::ng-deep .search-toggle {
+        margin-top: -45px;
+        
+    } 
 }
-@media screen and (max-width: 414px){
+@media (max-width:414px){
     .title{
         display: none;
     }
-    .image{
-        display:none;
+    .utility{
+        align-items: center;
+        height: 40px;
     }
-}
-@media (max-width:768px){
-    .side-menu-item{
-        margin-left:-10px;
+    .user{
+        align-items: center;
+        height: 40px;
+        margin-right: 0px;
     }
-}
-//@media (max-width:375px){
-//    .title{
-//        display: none;
-//    }
-//    .user{
-//        display: none;
- //   }
-//    .utility{
- //       background-color: red;
- //       margin-right: 5px;
- //   }
-    
-    
-
-
-//nav bar css
-
-.side-menu-item{
-    margin-left:30px;
-    color: #202124;
-    letter-spacing: .01785714em;
-    font-family: 'Google Sans',Roboto,Arial,sans-serif;
-    font-size: .875rem;
-    font-weight: 500;
-    line-height: 1.25rem;
-    position: static;
-
-}
-.side-icon{
-    color:rgb(110, 107, 107)
-}
- 
-.example-sidenav {
-    padding: 20px;
-    background-color: rgb(255, 255, 255, 1);
-    outline: none;
-    width: 24%;
+    .search{
+        margin-left: 0px;
+        width:75px;
+        padding: 0;
+    }
+    .search-icon{
+        display: flex;
+        flex-wrap: wrap;
+        margin-left: 45px;
+    }
+    .search-toggle-item{
+        width:140px;
+        display:inline;
+        
+    }
+    ::ng-deep .search-toggle {
+        margin-top: -45px;
+        margin-left:-150px;   
+    }   
 }
 
-.sideIcon{
-    display: flex;
-}
-.active,.sideIcon:hover {
-    background-color: #feefc3;
-    //color: white;
-    width: 140%;
 
+/// css nav
+.example-sidenav-container {
+    flex: 2;
+    background-color: white; 
+    margin-top:10px;
+    height: 88vh;
   }
   
-.sideIcon:hover{
-    //height: 40px;
-    display: flex;
-    align-items: center;
-    letter-spacing: .01785714em;
-    font-family: 'Google Sans',Roboto,Arial,sans-serif;
-    font-size: .875rem;
-    font-weight: 500;
-    line-height: 1.25rem;
-    height: 48px;
-    
-    //min-width: 10px;
-    overflow: hidden;
+  .example-is-mobile .example-sidenav-container {
+    flex: 2 0 auto;   
+  }
+  
+  .btnPosition {
+    margin-left: 15px;
+    opacity: 0.6;
+  }
+  .button{
+    opacity: 0.6;
+  }
+  
+  .navName{
+    font-size : 16px;
+    margin-top:130px;
+    cursor : pointer;
+    display:inline;
+    margin-left: 20px;
+    margin-right: 100px;
+    width : 220px;
+    transform : 300ms ease-in-out;
+  }
+  
+  .navlist:hover {
+    background-color: #feefc3;
+    border-radius : 0 20px 20px 0;
+  }
+  
+  .menuBtn,
+  .navBtn {
+    transform: all 3s ease;
+    display: inline;
+    margin-top:5px;
+    margin-bottom: 5px;
+  }
+  
+  .menuBtn:hover {
+    background-color: rgba(153, 147, 147, 0.5);
+  }
+  
+  .mat-sidenav-content {
+    padding: 2.5%;
+   
+  }
+  
+  .center {
+    margin: auto 3%;
+ 
+  }
+  
+  .searchBar {
+    height : 45px;
+    border : 0.05px solid rgb(211, 205, 205);
+    border-radius : 8px;
+    padding-left : 10px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-right: 15px;
+    margin-left: 150px;
+    background-color: transparent;
+    background-color: #ebebeb;
+  }
+::ng-deep .mat-drawer-inner-container {
     width: 100%;
-    border-radius: 0px 50px 50px 0px ;
-    box-sizing: border-box;
-    border: 1px solid transparent;
-  }
-  button:checked+.hide{display:none;}
-  .mat-raised-button{
-      padding:0px;
-  }
-  .mat-expansion-panel-header-description {
-    display:flex;
-    flex-wrap: wrap;
-    flex-grow:6;
-    //margin-right:76px;
-    justify-content: flex-end;
-    padding-right: 25px;
-    border-radius: 5px;
-   }
-   .material-icons{
-       margin-left:25px;
-   }
-   ::ng-deep .mat-form-field-appearance-fill .mat-form-field-flex {
-    background-color: white;
-    border-bottom: none;
+    height: 100%;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
 }
-
+::ng-deep .side-nav{
+    margin-top: 0px;;
+}
+ 

@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit ,ChangeDetectorRef, OnDestroy } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { MediaMatcher } from '@angular/cdk/layout';
 import { DialogueElementComponent } from '../dialogue-element/dialogue-element.component';
 @Component({
   selector: 'app-header',
@@ -10,7 +11,18 @@ import { DialogueElementComponent } from '../dialogue-element/dialogue-element.c
 export class HeaderComponent implements OnInit {
 
   switchClick = 1
-  constructor(public dialog: MatDialog) { }
+  isExpandable: boolean = false;
+  mobileQuery: MediaQueryList;
+  private _mobileQueryListener: () => void;
+  constructor(public dialog: MatDialog,changeDetectorRef: ChangeDetectorRef, media: MediaMatcher) { 
+    this.mobileQuery = media.matchMedia('(max-width: 600px)');
+    
+
+    this._mobileQueryListener = () => changeDetectorRef.detectChanges();
+    
+
+  }
+  
 
   ngOnInit(): void {
   }

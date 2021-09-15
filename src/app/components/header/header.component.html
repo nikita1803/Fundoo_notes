@@ -1,50 +1,44 @@
 <body class="body">
-    <div style="height: 100vh;width:100%;">
-        <div style="border-bottom: 1px solid #bfbebe; ">
-            <div class="header search-box"  >
-                <mat-toolbar> 
-                        <button  class=" buttonMenu button" type="button" mat-raised-button (click)="drawer.toggle()"  mat-icon-button aria-label="Example icon button with a menu icon">                   
+    <div class = "main">
+       
+        <mat-toolbar class="sticky-header"> 
+                        <button  class=" buttonMenu button" type="button" mat-raised-button   mat-icon-button aria-label="Example icon button with a menu icon" (click)="isExpandable=!isExpandable">                   
                             <mat-icon>menu</mat-icon>
                         </button>
-                        <span style="margin-left:30px;margin-top:10px;margin-left: 2px;"><img src="../assets/kepp_logo.png" style="height: 50px;width:50px;"></span>
+                        <span class="image"><img src="../assets/kepp_logo.png"></span>
                         <span class="title">FundooNotes</span>
-                        <span class="example-spacer"></span>
-                        <div class="head-center" >
-                            <form class="search" >
-                                <button mat-icon-button class="example-icon settings-icon" mat-icon-button [matMenuTriggerFor]="menu1" aria-label="Example icon-button with a menu" >
+                        <form class="search" >
+                                <button mat-icon-button class="example-icon search-icon" mat-icon-button [matMenuTriggerFor]="menu1">
                                     <mat-icon style="margin:0px;">search</mat-icon>
                                 </button>
-                                <mat-menu #menu1="matMenu" class="search-toggle"  yPosition="below" style="padding:0px;">
-                                        <span><span class="material-icons">
+                                <mat-menu #menu1="matMenu" class="search-toggle"  xPosition="after"style="width:800px" >
+                                        <span><span class="material-icons back-icon">
                                             keyboard_backspace
-                                        </span><input mat-menu-item class="searchInput search-toggle-item" aria-label="Search" type="text" placeholder="Search"></span>
+                                        </span><input mat-menu-item class="search-toggle-item" aria-label="Search" type="text" placeholder="Search"></span>
                                 </mat-menu> 
-                                <div class="searchbox">
-                                    <input class="searchInput" aria-label="Search" type="text" placeholder="Search" >
-                                </div>
-                            </form>
-                        </div>
+                                <input class="searchInput" aria-label="Search" type="text" placeholder="Search" >
+                        </form>
                         <div class="utility">
-                            <button mat-icon-button class="example-icon refresh" aria-label="Example icon-button with refresh icon">
+                            <button mat-icon-button class="example-icon refresh utility-item" aria-label="Example icon-button with refresh icon">
                                 <mat-icon>refresh</mat-icon>
                             </button>
-                            <button mat-icon-button class="example-icon menu-icon" aria-label="Example icon-button with menu icon">
+                            <button mat-icon-button class="example-icon menu-icon utility-item" aria-label="Example icon-button with menu icon">
                                 <mat-icon>menu</mat-icon>
                             </button>
-                            <button mat-icon-button class="example-icon settings-icon" mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu" >
+                            <button mat-icon-button class="example-icon settings-icon utility-item" mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu" >
                                 <mat-icon>settings</mat-icon>
                             </button>
-                            <mat-menu #menu="matMenu" class="setting"  yPosition="below" >
-                                    <button mat-menu-item class="sentting-item">
+                            <mat-menu #menu="matMenu"  class="matmenu" yPosition="below"  >
+                                    <button mat-menu-item class="setting-item">
                                         <span>Settings</span>
                                     </button>
-                                    <button mat-menu-item class="sentting-item">
+                                    <button mat-menu-item class="setting-item">
                                         <span>Enable dark theme</span>
                                     </button>
-                                    <button mat-menu-item class="sentting-item">
+                                    <button mat-menu-item class="setting-item">
                                         <span>send feedback</span>
                                     </button>
-                                    <button mat-menu-item class="sentting-item">
+                                    <button mat-menu-item class="setting-item">
                                         <span>Help</span>
                                     </button>
                                     <button mat-menu-item class="sentting-item">
@@ -57,74 +51,73 @@
                             </mat-menu>
                         </div>
                         <div class="user">
-                            <button mat-icon-button class="example-icon" aria-label="Example icon-button with list icon">
+                            <button mat-icon-button class="example-icon utility-item" aria-label="Example icon-button with list icon">
                                 <mat-icon>grid_on</mat-icon>
                             </button>
-                            <button  mat-icon-button class="example-icon settings-icon" mat-icon-button [matMenuTriggerFor]="menuuser" aria-label="Example icon-button with a menu" >                     
+                            <button  mat-icon-button class="example-icon settings-icon utility-item" mat-icon-button [matMenuTriggerFor]="menuuser" aria-label="Example icon-button with a menu" >                     
                                 <mat-icon>supervised_user_circle</mat-icon>
                             </button>
-                            <mat-menu #menuuser="matMenu" class="setting1"  yPosition="below">
+                            <mat-menu #menuuser="matMenu" class="matmenu"  yPosition="below">
                                 <button mat-menu-item class="sentting-item">
                                 <span>Log out</span>
                                 </button>
                             </mat-menu>
                         </div>
-                </mat-toolbar>
-            </div>
-       
-           
+        </mat-toolbar>
+ 
 <!--side nav-->
-    
-    <mat-drawer-container class="example-container">
-        <mat-drawer #drawer class="example-sidenav" mode="side" >
-            <a ><div class="sideIcon" style="margin-bottom: 20px;height: 48px;">
-                <button>
-                    <span class="material-icons side-icon" >
-                        lightbulb
-                        </span>
-                </button>
-                <button class="side-menu-item" (click)="noteDisplay()" >Notes</button>
-            </div></a>
+<mat-sidenav-container class="example-sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
+    <mat-sidenav  opened="true" mode="side" [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
+      <mat-nav-list >
+        <div class="navlist active" fxLayout="row" (mouseover)="isExpandable=true"
+          fxLayoutAlign="start center" fxLayoutGap="20px" mat-list-item (click)="noteDisplay()" >
+          <button class="navBtn btnPosition" mat-icon-button>
+            <span class="material-icons side-icon" style="position:steady">
+                lightbulb
+                </span>
+          </button>
+          <p class="navName  " *ngIf="isExpandable" >Notes</p>
+        </div>
+        <div class="navlist" fxLayout="row" fxLayoutAlign="start center" 
+          routerLink='home/reminder' (mouseover)="isExpandable=true" fxLayoutGap="20px" mat-list-item
+          routerLink="/home/reminder">
+          <button class="navBtn btnPosition" mat-icon-button (mouseover)="isExpandable=true">
+            <mat-icon class="side-icon"> notifications_none</mat-icon>
+          </button>
+          <p class="navName " *ngIf="isExpandable">Reminder</p>
+        </div>
+        <div class="navlist" fxLayout="row" fxLayoutAlign="start center" (mouseover)="isExpandable=true"
+          fxLayoutGap="20px" mat-list-item (click)="openDialog()">
+          <button class="navBtn btnPosition" mat-icon-button (mouseover)="isExpandable=true" >
+            <mat-icon class="side-icon">create</mat-icon>
+          </button>
+          <p class="navName " *ngIf="isExpandable">Edit Labels</p>
+        </div>
+        <div class="navlist" fxLayout="row" fxLayoutAlign="start center" 
+          (mouseover)="isExpandable=true" fxLayoutGap="20px" mat-list-item routerLink="/home/archive">
+          <button class="navBtn btnPosition" mat-icon-button (mouseover)="isExpandable=true">
+            <mat-icon class="side-icon">archive</mat-icon>
+          </button>
+          <p class="navName " *ngIf="isExpandable">Archive</p>
+        </div>
+        <div class="navlist" fxLayout="row" fxLayoutAlign="start center" 
+          (mouseover)="isExpandable=true" fxLayoutGap="20px" mat-list-item (click)="trashDisplay()">
+          <button class="navBtn btnPosition" mat-icon-button (mouseover)="isExpandable=true">
+            <mat-icon class="side-icon">delete_outline</mat-icon>
+          </button>
+          <p class="navName" *ngIf="isExpandable">Trash</p>
+        </div>
+      </mat-nav-list>
+    </mat-sidenav>
 
-            <div class="sideIcon" style="margin-bottom: 20px;height: 48px;" >
-                <button>
-                  <mat-icon class="side-icon"> notifications_none</mat-icon>
-                </button>
-                <button class="side-menu-item">Remainders</button>
-            </div>
-
-            <div class="sideIcon" style="margin-bottom: 20px;height: 48px;">
-                <button>
-                    <mat-icon class="side-icon">create</mat-icon>
-                </button>
-                <button class="side-menu-item" (click)="openDialog()">Edit Labels</button>
-            </div>
-
-            <div class="sideIcon" style="margin-bottom: 20px;height: 48px;">
-                <button>
-                    <mat-icon class="side-icon">archive</mat-icon>
-                </button>
-                <button class="side-menu-item">Archieve</button>
-            </div>
-            
-            <div class="sideIcon" style="margin-bottom: 20px;height: 48px;">
-                <button>
-                    <mat-icon class="side-icon">delete_outline</mat-icon>
-                </button>
-                <button class="side-menu-item" (click)="trashDisplay()">Trash</button>
-            </div>
-            
-        </mat-drawer> 
-        <!--<div style=" width: 100%; height:100vh;display: flex;justify-content: center;">
-            <app-notes></app-notes>
-        </div>-->
-        <div style="width: 100%; height:100vh;display: flex;justify-content: center;" [ngSwitch]="switchClick">
-            <app-notes *ngSwitchCase = "1" style="height: 30%;"></app-notes>
+    <mat-sidenav-content class="side-nav">
+        <div style="width: 100%; height:100vh;display: flex;justify-content: center;align-items: flex-start;" [ngSwitch]="switchClick">
+            <app-notes *ngSwitchCase = "1" style="height: 100%;"></app-notes>
             <app-trash *ngSwitchCase = "3" style="height: 30%;"></app-trash>
         </div>
-        
-    </mat-drawer-container>
+    </mat-sidenav-content>
+</mat-sidenav-container>
+
     </div> 
-    </div>
 </body> 
                    
