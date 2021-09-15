@@ -175,7 +175,8 @@ img {
         justify-content: flex-end;
         align-items: flex-start;
         flex-grow: 0;
-        flex-shrink: 1;        
+        flex-shrink: 1; 
+        margin-left: -15px;       
     }
     .form{
         display: flex;
