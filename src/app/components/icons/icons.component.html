@@ -15,7 +15,7 @@
     </button>
     <!--color drop down-->
     <mat-menu  #aboveMenu="matMenu" yPosition="above">    
-        <app-colors ></app-colors>
+        <app-colors (ItemEvent)="receiveColorCode($event)"></app-colors>
     </mat-menu>
     <!-- insert photo icon -->
     <button mat-icon-button>
@@ -31,7 +31,8 @@
     <button mat-icon-button [matMenuTriggerFor]="belowMenu" >
         <mat-icon>more_vert</mat-icon>
     </button>
-        <mat-menu #belowMenu="matMenu" yPosition="below">    
-            <div class="deleteButton" mat-stroked-button  (click) = "delete()">Delete</div>
+        <mat-menu #belowMenu="matMenu" yPosition="below" class="delete">    
+            <div class="deleteButton" mat-stroked-button  (click) = "delete()" style="height: 
+            40px;width:100px;">Delete</div>
         </mat-menu>
 </div>

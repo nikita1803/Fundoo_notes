@@ -9,11 +9,18 @@ import { DisplaynoteComponent } from '../displaynote/displaynote.component';
 })
 export class IconsComponent implements OnInit {
   @Input() noteId:any;
-
+  @Output() transColor:EventEmitter<string> = new EventEmitter<string>();
   token_Id = localStorage.getItem('token');
+  isColor:string=''
   constructor(public note: NoteserviceService) { }
 
   ngOnInit(): void {
+  }
+  receiveColorCode = ($isColor:string) =>{
+    console.log("icon " + $isColor);
+    this.isColor = $isColor;
+    console.log("singleIcon " + this.isColor)
+    this.transColor.emit(this.isColor)
   }
   
   delete(){
@@ -27,4 +34,8 @@ export class IconsComponent implements OnInit {
       console.log("Deleted Successfully", data);
     });
   }
+  reloadCurrentPage() {
+    window.location.reload();
+  }
+  
 }
