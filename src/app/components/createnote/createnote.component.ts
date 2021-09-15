@@ -20,12 +20,27 @@ export class CreatenoteComponent implements OnInit {
   tokenId = localStorage.getItem("token");
   ngOnInit(): void {
   }
+  colorData:string=''
+
+  receiveIconColor=($colorData:string) => {
+    this.colorData = $colorData;
+    console.log("create " + this.colorData)
+    
+    let dataColor = {
+      "color": this.colorData
+    }
+    this.service.changeColor(dataColor, this.tokenId).subscribe((dataColor) => {
+      console.log("API " + dataColor)
+    })
+  }
+
   submit=() => {
     if(this.form.valid){
     let userData = {
       "title": this.form.controls.titleText.value,
       "description": this.form.controls.notesText.value,
-      "tokenid" : this.tokenId
+      "tokenid" : this.tokenId,
+      "color": this.colorData
     } 
     this.service.createnote(userData, this.tokenId).subscribe((userData) => {
       console.log(userData)

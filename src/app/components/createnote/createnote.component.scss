@@ -1,20 +1,24 @@
 .head-center {
-    //display: flex;
+    display: flex;
     border-radius: 8px;
-    background: #f1f3f4;
+    flex-direction: row;
+    background:#f1f3f4;
     width: 45%;
     height: 46px;
     align-items: center;
     margin-right: 70px;
     box-sizing: border-box;
     border: 1px solid transparent;
-    margin-left: 50px;
+    margin-left: 150px;
    // background-color:red ;
-    margin-top: 40px;
+    margin-top: 50px;
     width:550px;
-   //display: flex;
-   //flex-wrap: nowrap;
 }
+::ng-deep .text{
+    text-decoration: none;
+    resize: none;
+}
+
 .searchInput {
     display: block;
     width: 450px;
@@ -25,7 +29,9 @@
     padding: 0px 0px 0px 10px;
 }
 ::ng-deep .panel{
-    width: 650px;min-height: 40px;
+    width: 550px;
+    min-height: 40px;
+    background-color: rgb(255, 255, 255);
 }
 .head-center:hover {
     background: white;
