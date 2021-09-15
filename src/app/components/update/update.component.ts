@@ -17,6 +17,7 @@ export class UpdateComponent implements OnInit {
     this.title = data.note.title,
     this.description = data.note.description
     this.id = data.note.id
+    this.colorUpdate = data.note.color
 
   }
   form = new FormGroup({
@@ -26,14 +27,27 @@ export class UpdateComponent implements OnInit {
   })
 
   ngOnInit(): void {
+    console.log("update " + this.colorUpdate)
   }
   tokenId = localStorage.getItem("token");
+  receiveIconColorUpdate=($colorData:string) => {
+    this.colorUpdate = $colorData;
+    console.log("update " + this.colorUpdate)
 
+    let data={
+      color: this.colorUpdate,
+      noteIdList:[this.id]
+    }
+    this.noteService.changeColor(data,this.tokenId).subscribe((data) => {
+      console.log("color changed ", data);
+    })
+  }
   submit=()=>{ 
     let UpdateUserData = {
       "noteId": this.id,
       "title": this.form.controls.title.value,
       "description": this.form.controls.description.value,
+      "color": this.colorUpdate
     }
     console.log("update" + UpdateUserData)
     this.noteService.updateNote(UpdateUserData,this.tokenId).subscribe((UpdateUserData) => {
@@ -41,5 +55,7 @@ export class UpdateComponent implements OnInit {
     })
   }
 
-
+  reloadCurrentPage() {
+    window.location.reload();
+  }
 }
