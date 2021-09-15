@@ -43,7 +43,7 @@ import { Router } from '@angular/router';
       localStorage.setItem("lastName", data["lastName"]);
       localStorage.setItem("email", data["email"]);
       localStorage.setItem("token", data["id"]);
-      //this.router.navigate(['/dashboard']);
+      this.router.navigate(['/dashboard']);
      
     });
   }
