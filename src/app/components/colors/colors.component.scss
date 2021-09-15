@@ -1,17 +1,3 @@
-.body {
-    background-color: #ffff;
-    height: 107px;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-div.circle {
-    border-radius: 50px/50px;
-    width: 0px;
-    height: 0px;
-    cursor: pointer;
-}
 span {
     margin-left: 33px;
 }
@@ -21,9 +7,9 @@ span {
 }
   
 .color {
-    //height: 30px;
-    width: 10px;
-    border-radius: 250px;
+    height: 40px;
+    width: 18px;
+    border-radius: 100px/100px;
 }
   
 .color-icon {
@@ -37,5 +23,4 @@ span {
     display: flex;
     flex-direction: row;
     align-items: center;
-    //width:40px;
 }
