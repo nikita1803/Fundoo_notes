@@ -12,10 +12,10 @@ import { Router } from '@angular/router';
 })
  export class LoginComponent implements OnInit  {
   registerForm: FormGroup;
-  submitted = false;
+  submitted  = false;
   
   constructor(private formBuilder: FormBuilder,private service: UserServiceService, private router: Router) {
-    this.registerForm = this.formBuilder.group({
+    this.registerForm  = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6)]],
     }); }
@@ -23,8 +23,8 @@ import { Router } from '@angular/router';
   get f() { return this.registerForm.controls; }
 
   onSubmit() {
-    this.submitted = true;
-    let data = {
+    this.submitted  = true;
+    let data  = {
       "email": this.registerForm.controls.email.value,
       "service": "advance",
       "password": this.registerForm.controls.password.value
@@ -36,7 +36,7 @@ import { Router } from '@angular/router';
     }
     alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.registerForm.value))*/
     
-    this.service.login(data).subscribe((data: any) => {
+    this.service.login(data).subscribe((data: any)  => {
       console.log(data);
 
       localStorage.setItem("firstName", data["firstName"]);
@@ -49,5 +49,7 @@ import { Router } from '@angular/router';
   }
   ngOnInit(): void {
   }
+  colors =['color:#3566b8','color:#34a853', 'color:#ea4335','color:#3566b8','color:#fabb05','color: #34a853','color:#ea4335','color:#34a853','color:#fabb05','color:#3566b8','color:#e6c9a8']
+  fontText =['F','u','n','d','o','o','n','o','t','e','s']
 
 }
