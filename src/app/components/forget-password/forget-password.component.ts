@@ -16,8 +16,11 @@ export class ForgetPasswordComponent implements OnInit {
   constructor(private formBuilder: FormBuilder,private service: UserServiceService, private route: ActivatedRoute) {
     this.registerForm = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
-    }); }
-
+    });
+    
+  }
+  colors=['color:#3566b8','color:#34a853', 'color:#ea4335','color:#3566b8','color:#fabb05','color: #34a853','color:#ea4335','color:#34a853','color:#fabb05','color:#3566b8','color:#e6c9a8']
+  fontText=['F','u','n','d','o','o','n','o','t','e','s']
   get f() { return this.registerForm.controls; }
   token: any
   onSubmit() {
@@ -35,5 +38,6 @@ export class ForgetPasswordComponent implements OnInit {
     this.token = this.route.snapshot.params['reset'].token;
 
   }
+  
 }
 
