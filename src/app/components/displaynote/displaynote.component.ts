@@ -1,3 +1,4 @@
+import { flatten } from '@angular/compiler';
 import { Component, OnInit,Input } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { NoteserviceService } from 'src/app/services/noteservice.service';
@@ -26,6 +27,9 @@ export class DisplaynoteComponent implements OnInit {
       this.allNotes=this.allNotes.filter((noteData:any)=>{
        return noteData.isDeleted === false ;
       });
+      this.allNotes=this.allNotes.filter((note:any)=>{
+        return note.isArchived==false
+      });
     })
   }
   receiveToUpdate=($colorData:string) => {
@@ -35,5 +39,8 @@ export class DisplaynoteComponent implements OnInit {
   openAddDialog(updateData: any) {
    this.updateData = updateData
     this.dialog.open(UpdateComponent, {data : {note: updateData} });
+  }
+  reloadCurrentPage() {
+    window.location.reload();
   }
 }
