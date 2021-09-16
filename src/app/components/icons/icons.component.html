@@ -1,4 +1,4 @@
-<div style="display: flex; justify-content: flex; align-items: center; height: 30px;">
+<div style  = "display: flex; justify-content: flex; align-items: center; height: 30px;">
     <!-- Alert icon -->
     <button mat-icon-button >
         <mat-icon>add_alert</mat-icon>
@@ -10,12 +10,12 @@
     </button>
 
     <!-- color pallate icon -->
-    <button mat-icon-button [matMenuTriggerFor]="aboveMenu"> 
+    <button mat-icon-button [matMenuTriggerFor] = "aboveMenu"> 
             <mat-icon>color_lens</mat-icon>
     </button>
     <!--color drop down-->
-    <mat-menu  #aboveMenu="matMenu" yPosition="above">    
-        <app-colors (ItemEvent)="receiveColorCode($event)"></app-colors>
+    <mat-menu  #aboveMenu  = "matMenu" yPosition ="above">    
+        <app-colors (ItemEvent) ="receiveColorCode($event)"></app-colors>
     </mat-menu>
     <!-- insert photo icon -->
     <button mat-icon-button>
@@ -23,16 +23,16 @@
     </button>
     
     <!-- archive  icon -->
-    <button mat-icon-button >
+    <button mat-icon-button (click)  =  "archivePage()" >
         <mat-icon >archive</mat-icon>
     </button>
 
     <!-- more icon -->
-    <button mat-icon-button [matMenuTriggerFor]="belowMenu" >
+    <button mat-icon-button [matMenuTriggerFor] = "belowMenu" >
         <mat-icon>more_vert</mat-icon>
     </button>
-        <mat-menu #belowMenu="matMenu" yPosition="below" class="delete">    
-            <div class="deleteButton" mat-stroked-button  (click) = "delete()" style="height: 
+        <mat-menu #belowMenu = "matMenu" yPosition = "below" class = "delete">    
+            <div class = "deleteButton" mat-stroked-button  (click)  =  "delete()" style = "height: 
             40px;width:100px;">Delete</div>
         </mat-menu>
 </div>

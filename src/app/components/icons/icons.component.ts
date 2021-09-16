@@ -25,13 +25,23 @@ export class IconsComponent implements OnInit {
   
   delete(){
     console.log(this.noteId);
-    //alert(this.token_Id)
     let data = {
       noteIdList:[this.noteId],
       isDeleted:true
     }
     this.note.deleteNotes(data, this.token_Id).subscribe((data)=>{
       console.log("Deleted Successfully", data);
+    });
+  }
+  archivePage() {
+    console.log(this.noteId)
+    let dataArchive = {
+      noteIdList:[this.noteId],   
+      "isArchived": true   
+    }
+    console.log("note and boolean ", dataArchive);
+    this.note.archivedNotes(dataArchive, this.token_Id).subscribe((dataArchive)=>{
+      console.log("Archieve Successfully", dataArchive);
     });
   }
   reloadCurrentPage() {
