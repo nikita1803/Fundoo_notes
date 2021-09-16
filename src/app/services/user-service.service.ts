@@ -32,4 +32,7 @@ export class UserServiceService {
   loggedIn () {
     return !!localStorage.getItem('token')
   }  
+  logout() {
+    localStorage.removeItem('token');
+  }
 }

@@ -18,6 +18,9 @@ import { IconsComponent } from './components/icons/icons.component';
 import { ColorsComponent } from './components/colors/colors.component';
 import { DisplaynoteComponent } from './components/displaynote/displaynote.component';
 import { UpdateComponent } from './components/update/update.component';
+import { ArchiveComponent } from './components/archive/archive.component';
+import { ArchiveIconsComponent } from './components/archive-icons/archive-icons.component';
+import { DeleteIconsComponent } from './components/delete-icons/delete-icons.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +39,10 @@ import { UpdateComponent } from './components/update/update.component';
     ColorsComponent,
     DisplaynoteComponent,
     UpdateComponent,
-    TrashComponent
+    TrashComponent,
+    ArchiveComponent,
+    ArchiveIconsComponent,
+    DeleteIconsComponent,
    
   ],
   imports: [
