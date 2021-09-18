@@ -21,6 +21,10 @@ import { UpdateComponent } from './components/update/update.component';
 import { ArchiveComponent } from './components/archive/archive.component';
 import { ArchiveIconsComponent } from './components/archive-icons/archive-icons.component';
 import { DeleteIconsComponent } from './components/delete-icons/delete-icons.component';
+import { ArchiveUpdateComponent } from './components/archive-update/archive-update.component';
+import { PinIconComponent } from './components/pin-icon/pin-icon.component';
+import { PinDisplayComponent } from './components/pin-display/pin-display.component';
+import { UnpinIconComponent } from './components/unpin-icon/unpin-icon.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +47,10 @@ import { DeleteIconsComponent } from './components/delete-icons/delete-icons.com
     ArchiveComponent,
     ArchiveIconsComponent,
     DeleteIconsComponent,
+    ArchiveUpdateComponent,
+    PinIconComponent,
+    PinDisplayComponent,
+    UnpinIconComponent,
    
   ],
   imports: [
