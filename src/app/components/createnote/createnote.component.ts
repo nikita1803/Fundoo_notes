@@ -43,9 +43,11 @@ export class CreatenoteComponent implements OnInit {
       "color": this.colorData
     } 
     this.service.createnote(userData, this.tokenId).subscribe((userData) => {
-      console.log(userData)
+      console.log("note created",userData)
       this.form.reset(); 
-      
+      this.colorData = '#ffff'
+    }, (error) => {
+      console.log("error in creation");
     });
     //alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.form.value))
     
