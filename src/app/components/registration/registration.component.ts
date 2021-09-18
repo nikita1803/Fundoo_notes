@@ -37,7 +37,10 @@ import { Router } from '@angular/router';
     }
     console.log(data)
     this.service.registration(data).subscribe((data) => {
-      console.log(data)
+      console.log("registration succesfully",data)
+      this.router.navigate(['/login']);
+    }, (error) => {
+      console.log("error in registeration");
     })
   }
   ngOnInit(): void {
