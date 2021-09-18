@@ -22,8 +22,9 @@ export class NoteserviceService {
       })
     );
   }
-
-  
+  getAllNotes(token: any) {
+    return this.httpService.get(`${this.url}notes/getNotesList`, token)
+  }
   deleteNotes = (userData: any, token: any) => {
     return this.httpService.post(`${this.url}notes/trashNotes`, userData, true, token)
     .pipe(
@@ -54,9 +55,12 @@ export class NoteserviceService {
     );
   }
   deleteForever(data: any, token: any){
-    return this.httpService.post(`${this.url}notes/deleteForeverNotes`, data, token);
+    return this.httpService.post(`${this.url}notes/deleteForeverNotes`, data,true, token);
   }
   getArchieveNotes = (token: any) => {
     return this.httpService.get(`${this.url}notes/getArchiveNotesList`, true, token)
+  }
+  pinedNote = (data : any ,token: any )=>{
+    return this.httpService.post(`${this.url}notes/pinUnpinNotes`, data , true,  token);
   }
 }
