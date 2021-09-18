@@ -52,7 +52,9 @@ export class UpdateComponent implements OnInit {
     console.log("update" + UpdateUserData)
     this.noteService.updateNote(UpdateUserData,this.tokenId).subscribe((UpdateUserData) => {
     console.log("updated successfull", UpdateUserData); 
-    })
+    }, (error) => {
+      console.log("error in update note");
+    });
   }
 
   reloadCurrentPage() {
