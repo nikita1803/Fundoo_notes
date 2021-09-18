@@ -32,6 +32,9 @@ export class ArchiveIconsComponent implements OnInit {
     this.note.deleteNotes(data, this.token_Id).subscribe((data)=>{
       console.log("Deleted Successfully", data);
     });
+    this.note.archivedNotes(data, this.token_Id).subscribe((dataArchive)=>{
+      console.log("Unarchieve Successfully", dataArchive);
+    });
   }
   unarchivePage() {
     console.log(this.noteId)
@@ -42,6 +45,8 @@ export class ArchiveIconsComponent implements OnInit {
     console.log("note and boolean ", dataArchive);
     this.note.archivedNotes(dataArchive, this.token_Id).subscribe((dataArchive)=>{
       console.log("Unarchieve Successfully", dataArchive);
+    }, (error) => {
+      console.log("error in archive");
     });
   }
   reloadCurrentPage() {

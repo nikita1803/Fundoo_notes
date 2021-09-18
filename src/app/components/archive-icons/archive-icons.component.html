@@ -15,9 +15,9 @@
             <mat-icon>color_lens</mat-icon>
     </button>
     <!--color drop down-->
-    <mat-menu  #aboveMenu="matMenu" yPosition="above">    
+    <span><mat-menu  #aboveMenu="matMenu" yPosition="above" class="color-pallet">    
         <app-colors (ItemEvent)="receiveColorCode($event)"></app-colors>
-    </mat-menu>
+    </mat-menu></span>
     <!-- insert photo icon -->
     <button mat-icon-button>
         <mat-icon> insert_photo</mat-icon>
