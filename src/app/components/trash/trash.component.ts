@@ -23,7 +23,9 @@ export class TrashComponent implements OnInit {
     console.log("Getting trash")
     this.trashNote=this.noteService.getTrashNotes( this.token_Id).subscribe((data:any)=>{
       this.notes=data['data'].data 
-    })
+    }, (error) => {
+      console.log("error in getting trash");
+    });
   }
 
 }
