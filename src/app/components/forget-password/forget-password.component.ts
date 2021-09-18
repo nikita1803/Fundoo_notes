@@ -30,7 +30,9 @@ export class ForgetPasswordComponent implements OnInit {
     }
     this.service.email(data).subscribe((data) => {
       console.log(data)
-    })
+    }, (error) => {
+      console.log("error in forget password");
+    });
   }
   ngOnInit(): void {
     
