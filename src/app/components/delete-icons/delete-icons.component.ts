@@ -7,12 +7,14 @@ import { NoteserviceService } from 'src/app/services/noteservice.service';
 })
 export class DeleteIconsComponent implements OnInit {
   @Input() noteId:any;
+  @Output() refreshRequest = new EventEmitter<any>();
   @Output() transColor:EventEmitter<string> = new EventEmitter<string>();
   token_Id = localStorage.getItem('token');
   isColor:string=''
   constructor(public note: NoteserviceService) { }
 
   ngOnInit(): void {
+    
   }
   restore(){
     console.log(this.noteId);
@@ -21,21 +23,26 @@ export class DeleteIconsComponent implements OnInit {
       noteIdList:[this.noteId],
       isDeleted:false
     }
+    
     this.note.deleteNotes(data, this.token_Id).subscribe((data)=>{
       console.log("restore Successfully", data);
+    }, (error) => {
+      console.log("error in restoration");
     });
   }
-  permanent_delete(){
-    console.log(this.noteId);
-    //alert(this.token_Id)
+  deleteNote() {
+    console.log(this.noteId)
     let data = {
-      noteIdList:[this.noteId],
-      isDeleted:false
-    }
-    this.note.deleteForever(data, this.token_Id).subscribe((data)=>{
-      console.log("parmanent Deleted Successfully", data);
+      noteIdList: [this.noteId],
+      isDeleted: false,
+    };
+    console.log(data);
+    this.note.deleteForever(data, this.token_Id).subscribe((data) => {
+      console.log(data);
+      console.log("permanent delete Successfully", data);    
+    }, (error) => {
+      console.log("error in permanent delete");
     });
-
   }
   reloadCurrentPage() {
     window.location.reload();
