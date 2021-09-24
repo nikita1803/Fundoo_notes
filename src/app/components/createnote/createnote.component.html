@@ -1,11 +1,11 @@
-<div  class="head-center">
+<div  class="head-center" >
     <mat-accordion class="example-headers-align" multi>
         <mat-expansion-panel  hideToggle   [style.background-color] = "colorData" >
           <mat-expansion-panel-header class="header" [style.background-color] = "colorData" >
-            <mat-panel-title>
+            <mat-panel-title >
                 <form [formGroup]="form" (ngSubmit)="submit()" id="my-form"> 
                     <div style="width: 600px;">
-                        <div style="display: flex; align-items: flex-end; justify-content: space-between;" [style.background-color] = "colorData">
+                        <div class="title-main" [style.background-color] = "colorData" >
                             <div >
                                 <input [style.background-color] = "colorData" class="searchInput" type="text" placeholder="Title" formControlName="titleText" >
                             </div>
@@ -26,12 +26,14 @@
           <form [formGroup]="form"  >
             <mat-form-field class="example-full-width" appearance="fill" style="width: 100%;">
               <!--<mat-label></mat-label>-->
-              <input matInput placeholder="Take a note.." formControlName="notesText" >
+              <textarea matInput placeholder="Take a note.." formControlName="notesText" cdkTextareaAutosize #autosize="cdkTextareaAutosize"
+              cdkAutosizeMinRows="1"
+              cdkAutosizeMaxRows="5"></textarea>
             </mat-form-field>
           <!--Icon element-->
             <mat-action-row class="footer" style="display: flex; justify-content: space-between;" >
                 <app-icons (transColor)="receiveIconColor($event)" style="width: 60%;"></app-icons>
-                <button mat-button  type="submit" form="my-form"  >Close</button>
+                <button mat-button  type="submit" form="my-form" class="close-button"  >Close</button>
             </mat-action-row>
           </form>
           

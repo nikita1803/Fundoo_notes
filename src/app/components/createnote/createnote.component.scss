@@ -1,17 +1,17 @@
 .head-center {
-    display: flex;
+    //display: flex;
     border-radius: 8px;
     flex-direction: row;
     background:#f1f3f4;
     width: 45%;
-    height: 46px;
+    min-height: 46px;
     align-items: center;
     margin-right: 70px;
     box-sizing: border-box;
     border: 1px solid transparent;
     margin-left: 150px;
    // background-color:red ;
-    margin-top: 50px;
+    margin-top: 0px;
     width:550px;
 }
 ::ng-deep .text{
@@ -20,9 +20,9 @@
 }
 
 .searchInput {
-    display: block;
-    width: 450px;
-    height: 48px;
+    display: flex;
+    width: 350px;
+    min-height: 48px;
     outline: none;
     border: transparent;
     background-color: rgb(255, 255, 255);
@@ -41,10 +41,15 @@
 .head-right {
     background-color: rgb(255, 255, 255, 1); 
     width: 25%;
-    height: 6vh;
+    min-height: 6vh;
     display: flex;
     //justify-content: flex-end;
     align-items: center;
+}
+.title-main{
+    display: flex; 
+    align-items: flex-end; 
+    justify-content: space-between;
 }
 .footer{
     border-top-style: none;
@@ -56,28 +61,92 @@
    // float:right;
     margin-right: 16px;
     justify-content: flex-start;
+    //background-color: blueviolet;
 
 }
 .mat-expansion-panel-header-description {
-    display: flex;
-    justify-content: flex-end;
+    display: block;
+    justify-content: flex-start;
     align-items: center;
     padding-bottom: 10px;
+    clear: both;
 
+}
+::ng-deep .matInput{
+    border-bottom: none;
 }
 .mat-expansion-panel:hover{
     background-color: white;
     text-decoration: none;
 }
 .matInput{
-    border-bottom: white;
+    border-bottom: rgb(255, 255, 255);
+}
+@media screen and (max-width: 768px)
+{
+    ::ng-deep .panel{
+        display: flex;
+        justify-content: flex-end;
+        flex-wrap: nowrap;
+        width: 550px;
+        min-height: 40px;
+        //background-color: rgb(170, 18, 216);
+       // margin-left: 50px;
+        margin-right: 60px;
+    }
+    .example-headers-align{
+        width: 550px;
+       // background-color: brown;
+        min-height: 50px;
+    }
+    .searchInput{
+        width:350px;
+    }
+    ::ng-deep .title-icon{
+            width: 50px;
+    }
+    .mat-expansion-panel-header-description {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        padding-bottom: 10px;
+    
+    }
 }
 @media screen and (max-width: 414px)
 {
+   
     ::ng-deep .panel{
-        width: 350px;min-height: 40px;
+        width: 350px;
+        min-height: 40px;
     }
-    .head-center{
-        width:350px;
+    .example-headers-align{
+        width: 320px;
+        //background-color: brown;
+        min-height: 50px;
+        margin-left: -50px;;
+    }
+    .searchInput{
+        width:100px;
+    }
+    .close-button{
+        margin-top: 20px;
+    }
+    
+    .head-center {
+        display: flex;
+        border-radius: 8px;
+        flex-direction: row;
+        //background:#05557e;
+        width: 150px;
+        min-height: 46px;
+        align-items: center;
+        margin-right: 70px;
+        box-sizing: border-box;
+        border: 1px solid transparent;
+        margin-left: 0px;
+        //background-color:red ;
+        margin-top: 0px;
+        //width:550px;
     }
 }

@@ -9,6 +9,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   templateUrl: './createnote.component.html',
   styleUrls: ['./createnote.component.scss']
 })
+
 export class CreatenoteComponent implements OnInit {
   
   constructor(private service: NoteserviceService , private activeRoute: ActivatedRoute) { }
@@ -40,12 +41,12 @@ export class CreatenoteComponent implements OnInit {
       "title": this.form.controls.titleText.value,
       "description": this.form.controls.notesText.value,
       "tokenid" : this.tokenId,
-      "color": this.colorData
+      "color": this.colorData,
     } 
     this.service.createnote(userData, this.tokenId).subscribe((userData) => {
       console.log("note created",userData)
       this.form.reset(); 
-      this.colorData = '#ffff'
+      this.colorData = '#ffff';
     }, (error) => {
       console.log("error in creation");
     });
