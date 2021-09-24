@@ -32,7 +32,10 @@ export class UserServiceService {
   loggedIn () {
     return !!localStorage.getItem('token')
   }  
+  /*logout = (token: any) => {
+    return this.httpService.post(`${this.url}user/logout`, token)
+  }*/
   logout() {
-    localStorage.removeItem('token');
+    return localStorage.removeItem('token');
   }
 }
