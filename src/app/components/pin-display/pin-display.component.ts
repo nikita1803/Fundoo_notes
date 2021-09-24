@@ -18,23 +18,32 @@ export class PinDisplayComponent implements OnInit {
   
   constructor(public note: NoteserviceService, private dialog: MatDialog) { }
 
+  
   ngOnInit(): void {
     
+    this.getNotes();
+    this.note.getRefreshedData().subscribe(() => this.getNotes());
+  }
+  getNotes(){
     this.note.note(this.tokenId).subscribe((userData:any) => {
 
       this.allNotes=userData['data'].data
       this.allNotes=userData['data'].data.reverse()
+      console.log(this.allNotes);
       this.allNotes=this.allNotes.filter((noteData:any)=>{
-       return noteData.isPined === true ;
+       return noteData.isDeleted === false ;
       });
-      this.allNotes=this.allNotes.filter((noteData:any)=>{
-        return noteData.isDeleted === false ;
-       });
       this.allNotes=this.allNotes.filter((note:any)=>{
         return note.isArchived==false;
       });
-      
-    })
+      this.allNotes=this.allNotes.filter((note:any)=>{
+        return note.isPined===true;
+        
+      })
+    }, (error) => {
+      console.log("error in display note");
+    });
+    
   }
   receiveToUpdate=($colorData:string) => {
     this.colorData = $colorData;
@@ -44,9 +53,10 @@ export class PinDisplayComponent implements OnInit {
    this.updateData = updateData
     this.dialog.open(UpdateComponent, {data : {note: updateData} });
   }
-  
   reloadCurrentPage() {
     window.location.reload();
   }
+  
+  
 
 }

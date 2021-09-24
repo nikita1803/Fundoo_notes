@@ -22,6 +22,7 @@ export class PinIconComponent implements OnInit {
       console.log(this.isPinDisplayComponent);
     }
     
+    
   }
   receiveColorCode = ($isColor:string) =>{
     console.log("icon " + $isColor);
@@ -29,6 +30,7 @@ export class PinIconComponent implements OnInit {
     console.log("singleIcon " + this.isColor)
     this.transColor.emit(this.isColor)
   }
+
   pin(){
     console.log(this.noteId)
     let dataPin = {
@@ -38,9 +40,14 @@ export class PinIconComponent implements OnInit {
     console.log("note and boolean ", dataPin);
     this.note.pinedNote(dataPin, this.token_Id).subscribe((dataPin)=>{
       console.log("Pined Successfully", dataPin);
+      
+      this.reloadCurrentPage();
     }, (error) => {
       console.log("error in pin");
     });
+  }
+  reloadCurrentPage() {
+    this.note.getRefreshedData().subscribe(() => this.pin());
   }
   unpin(){
     console.log(this.noteId)
@@ -51,6 +58,7 @@ export class PinIconComponent implements OnInit {
     console.log("note and boolean ", dataPin);
     this.note.pinedNote(dataPin, this.token_Id).subscribe((dataPin)=>{
       console.log("UnPined Successfully", dataPin);
+      this.reloadCurrentPage();
     }, (error) => {
       console.log("error in unpin");
     });

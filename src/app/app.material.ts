@@ -14,7 +14,7 @@ import { MatCardModule } from '@angular/material/card';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule} from '@angular/common/http';
 import { NgModule } from '@angular/core';
-
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @NgModule({
     imports: [
@@ -34,6 +34,7 @@ import { NgModule } from '@angular/core';
         MatCardModule,
         BrowserAnimationsModule,
         HttpClientModule,
+        MatTooltipModule
     ],
     exports:[
         MatInputModule,
@@ -52,6 +53,7 @@ import { NgModule } from '@angular/core';
         MatCardModule,
         BrowserAnimationsModule,
         HttpClientModule,
+        MatTooltipModule
     ]
     
 })

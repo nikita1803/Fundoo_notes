@@ -19,7 +19,7 @@ import { ColorsComponent } from './components/colors/colors.component';
 import { DisplaynoteComponent } from './components/displaynote/displaynote.component';
 import { UpdateComponent } from './components/update/update.component';
 import { ArchiveComponent } from './components/archive/archive.component';
-import { ArchiveIconsComponent } from './components/archive-icons/archive-icons.component';
+import { ArchiveIconsComponent } from "./components/archive-icons/archive-icons.component";
 import { DeleteIconsComponent } from './components/delete-icons/delete-icons.component';
 import { ArchiveUpdateComponent } from './components/archive-update/archive-update.component';
 import { PinIconComponent } from './components/pin-icon/pin-icon.component';
