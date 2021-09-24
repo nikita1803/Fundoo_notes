@@ -17,6 +17,7 @@ export class HeaderComponent implements OnInit {
   isExpandable: boolean = false;
   mobileQuery: MediaQueryList;
   public token : any;
+  tokenId = localStorage.getItem("token");
   private _mobileQueryListener: () => void;
   constructor(public dialog: MatDialog,changeDetectorRef: ChangeDetectorRef, media: MediaMatcher,public router : Router,public service: UserServiceService) { 
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
@@ -41,12 +42,16 @@ export class HeaderComponent implements OnInit {
   archieveDisplay(){
     return this.switchClick = 4;
   }
+
   logout() {
-    sessionStorage.clear();
-    localStorage.clear();
-    
-    this.router.navigateByUrl('login')
+   // this.tokenId=null;
+    this.service.logout();
+    console.log(this.tokenId ,"logout successful");
+   // sessionStorage.clear();
+   // localStorage.clear();
+    this.router.navigateByUrl('login');
   }
+
 }
 
 

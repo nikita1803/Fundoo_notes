@@ -251,7 +251,10 @@
   .button{
     opacity: 0.6;
   }
-  
+  .example-button {
+    //display: block;
+    margin: 80px auto 400px;
+  }
   .navName{
     font-size : 16px;
     margin-top:130px;
