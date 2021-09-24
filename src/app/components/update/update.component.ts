@@ -47,11 +47,11 @@ export class UpdateComponent implements OnInit {
       "noteId": this.id,
       "title": this.form.controls.title.value,
       "description": this.form.controls.description.value,
-      "color": this.colorUpdate
+      "color": this.colorUpdate,
     }
     console.log("update" + UpdateUserData)
     this.noteService.updateNote(UpdateUserData,this.tokenId).subscribe((UpdateUserData) => {
-    console.log("updated successfull", UpdateUserData); 
+    console.log("updated successfull", UpdateUserData);
     }, (error) => {
       console.log("error in update note");
     });
