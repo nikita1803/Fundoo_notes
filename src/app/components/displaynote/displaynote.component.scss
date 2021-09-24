@@ -96,5 +96,19 @@
     margin-top: -30px;
     //background-color: rgba(223, 5, 5, 0.5);
   }
+  @media screen and (max-width: 768px)
+{
+  .icon {
+    visibility: visible;
+   }
+   .pin{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    margin-left:220px;
+    align-items: flex-start;
+    margin-top: -30px;
+   }
   
-  
+   
+}

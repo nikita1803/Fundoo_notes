@@ -29,6 +29,7 @@ export class DisplaynoteComponent implements OnInit {
 
       this.allNotes=userData['data'].data
       this.allNotes=userData['data'].data.reverse()
+      console.log(this.allNotes);
       this.allNotes=this.allNotes.filter((noteData:any)=>{
        return noteData.isDeleted === false ;
       });
@@ -42,7 +43,9 @@ export class DisplaynoteComponent implements OnInit {
     }, (error) => {
       console.log("error in display note");
     });
+    
   }
+  
   receiveToUpdate=($colorData:string) => {
     this.colorData = $colorData;
     console.log("display " + this.colorData) 
@@ -56,4 +59,5 @@ export class DisplaynoteComponent implements OnInit {
   reloadCurrentPage() {
     window.location.reload();
   }
+  
 }
