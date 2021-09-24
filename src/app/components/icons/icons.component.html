@@ -1,17 +1,17 @@
 
-<div style  = "display: flex; justify-content: flex; align-items: center; height: 10px;">
+<div style  = "display: flex; justify-content: flex; align-items: center; height: 10px;" class="icon">
     <!-- Alert icon -->
-    <button mat-icon-button >
+    <button mat-icon-button matTooltip="alert">
         <mat-icon>add_alert</mat-icon>
     </button>
     
     <!-- person icon -->
-    <button mat-icon-button>
+    <button mat-icon-button matTooltip="identity">
         <mat-icon >perm_identity</mat-icon>
     </button>
 
     <!-- color pallate icon -->
-    <button mat-icon-button [matMenuTriggerFor] = "aboveMenu"> 
+    <button mat-icon-button [matMenuTriggerFor] = "aboveMenu" matTooltip="color"> 
             <mat-icon>color_lens</mat-icon>
     </button>
     <!--color drop down-->
@@ -19,17 +19,17 @@
         <app-colors (ItemEvent) ="receiveColorCode($event)" ></app-colors>
     </mat-menu></span>
     <!-- insert photo icon -->
-    <button mat-icon-button>
+    <button mat-icon-button  matTooltip="photo">
         <mat-icon> insert_photo</mat-icon>
     </button>
     
     <!-- archive  icon -->
-    <button mat-icon-button (click)  =  "archivePage()" >
+    <button mat-icon-button (click)  =  "archivePage()"  matTooltip="archive">
         <mat-icon >archive</mat-icon>
     </button>
 
     <!-- more icon -->
-    <button mat-icon-button [matMenuTriggerFor] = "belowMenu" >
+    <button mat-icon-button [matMenuTriggerFor] = "belowMenu"  matTooltip="more">
         <mat-icon>more_vert</mat-icon>
     </button>
         <mat-menu #belowMenu = "matMenu" yPosition = "below" class = "delete">    
